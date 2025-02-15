@@ -4,6 +4,10 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.local.set({ playing: false, volume: 0.32, songTitle: '' });
 }); // Default = 0.32
 
+chrome.runtime.onStartup.addListener(() => {
+  chrome.storage.local.set({ playing: false });
+});
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'play') {
     chrome.storage.local.get('volume', (result) => {
