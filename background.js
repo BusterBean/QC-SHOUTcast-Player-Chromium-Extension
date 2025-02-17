@@ -12,7 +12,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'play') {
     chrome.storage.local.get('volume', (result) => {
       if (!audio) {
-        audio = new Audio('https://radio.queercraft.net:443/stream/;'); // New station URL
+        audio = new Audio('https://radio.queercraft.net:443/stream/;'); // Station URL
         audio.volume = result.volume; // Set initial volume from storage
       }
       audio.play().then(() => {
@@ -31,9 +31,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         console.error("Error playing audio:", error);
         sendResponse({ success: false, error: error.message });
       });
-      // Start periodic fetching of song title
-      fetchSongTitle();
-      setInterval(fetchSongTitle, 5000);
     });
   } else if (message.action === 'stop') {
     if (audio) {
@@ -71,14 +68,3 @@ chrome.storage.onChanged.addListener((changes, area) => {
     }
   }
 });
-
-function fetchSongTitle() {
-  fetch('http://mc.queercraft.net:8008/currentsong')
-    .then(response => response.text())
-    .then(title => {
-      chrome.storage.local.set({ songTitle: title });
-    })
-    .catch(error => {
-      console.error("Failed to fetch song title:", error);
-    });
-}
