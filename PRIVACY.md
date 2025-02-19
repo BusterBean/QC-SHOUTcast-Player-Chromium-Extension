@@ -5,7 +5,7 @@ This QC-SHOUTcast-Player-Chromium-Extension is developed by BRENTGAMEZ (BrentBea
 
 (Extension collects)
 Audio Streaming: Streams audio from https://radio.queercraft.net:443/stream/;
-Song Title: Fetches the current song title from http://mc.queercraft.net:8008/currentsong
+Song Title: Fetches the current song title from https://radio.queercraft.net:443/stream/currentsong
 
 (Data Usage)
 The collected data is used for:
