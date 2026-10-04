@@ -25,5 +25,9 @@ How To Install:
 </div>
 
 <div align="center">
-  <h4>(If you're looking for the Firefox version of this extension click <a href="https://github.com/BusterBean/QC-SHOUTcast-Player-FireFox-Extension">Here</a>)</h4>
+  <h4>(Note: This built uses manifest 2 but a manifest 3 version is being worked on)</h4>
+</div>
+
+<div align="center">
+  <h5>(If you're looking for the Firefox version of this extension click <a href="https://github.com/BusterBean/QC-SHOUTcast-Player-FireFox-Extension">Here</a>)</h5>
 </div>
